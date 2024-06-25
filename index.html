@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0f7fa;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #bbdefb;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: calc(100% - 12px);
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group .captcha {
+            display: flex;
+            align-items: center;
+        }
+        .form-group .captcha span {
+            background-color: #fff;
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group .captcha input {
+            width: calc(100% - 72px);
+        }
+        .form-group .captcha button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2196f3;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function redirectToNewPage() {
+            window.location.href = 'adore.html';
+        }
+    </script>
+</head>
+<body>
+
+<div class="form-container">
+    <form onsubmit="event.preventDefault(); redirectToNewPage();">
+        <div class="form-group">
+            <label for="hallTicket">Enter Hall Ticket Number</label>
+            <input type="text" id="hallTicket" name="hallTicket" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Enter Date of Birth</label>
+            <input type="text" id="dob" name="dob" placeholder="YYYY/MM/DD" required>
+        </div>
+        <div class="form-group captcha">
+            <label for="captcha">Please enter this Captcha code in below TextBox</label>
+            <span>5FWVS3T9</span>
+            <input type="text" id="captcha" name="captcha" required>
+            <button type="button">Refresh</button>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
